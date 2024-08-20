@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-3</title>
+    <style>
+       body {
+            background-color: lightblue;
+          }
+          .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+            padding: 20px;
+          }
+
+          
+          .button {
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+          }
+          
+          .text {
+            margin-top: 10px;
+          }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="button">Click Me</button>
+        <p class="text">Initial Text</p>
+      </div>
+      <script>
+        const button = document.querySelector('.button');
+const text = document.querySelector('.text');
+const container = document.querySelector('body');
+
+let isClicked = false;
+
+button.addEventListener('click', () => {
+  if (!isClicked) {
+    button.textContent = 'Clicked!';
+    text.textContent = 'Text after clicked the button';
+    container.style.backgroundColor = 'pink';
+  } else {
+    button.textContent = 'Click Me';
+    text.textContent = 'Initial Text';
+    container.style.backgroundColor = 'lightblue';
+  }
+  isClicked = !isClicked;
+});
+      </script>
+</body>
+</html>
